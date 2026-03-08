@@ -29,3 +29,7 @@ Jimmy Javier
 - [ ] Crear las pruebas de integración
 - [ ] Crear el pipeline de CI
 - [ ] Crear el pipeline de CD
+
+## CI/CD
+
+> Información sobre Github Actions se agregará durante el curso.
