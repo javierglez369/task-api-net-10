@@ -5,6 +5,10 @@ on:
     branches:
       - main
 
+env: 
+  DOTNET_VERSION: '10.0.x'
+  BUILD_CONFIGURATION: 'Release'
+
 jobs:
     build:
       runs-on: ubuntu-latest
@@ -19,13 +23,20 @@ jobs:
         - name: Setup .NET
           uses: actions/setup-dotnet@v4
           with:
-            dotnet-version: '10.0.x'
+            dotnet-version: ${{env.DOTNET_VERSION}}
         
         - name: Verificar Versión .NET
           run: dotnet --version
           
         - name: Build del proyecto
-          run: dotnet build src/Api/Api.csproj --configuration Release
+          id: build-step
+          # working-directory: 'src/Api'
+          run: dotnet build src/Api/Api.csproj --configuration ${{env.BUILD_CONFIGURATION}}
+          continue-on-error: true
+
+        - name: Notifica on build failure
+          if: steps.build-step.outcome == 'failure'
+          run: echo "😢La compilación falló 🤬"
 
         - name: Mensaje Final
           run: echo "Workflow completado exitosamente"
