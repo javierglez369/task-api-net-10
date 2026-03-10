@@ -11,3 +11,8 @@ jobs:
     steps:
       - name: Paso Hola Mundo
         run: echo "Hola desde Github Actions"
+
+      - name: Debug
+        run: |
+          echo "Debugging: GITHUB_REF: ${{github.ref}}"
+          echo "Debugging: RUNNER_OS: ${{ runner.os}}"
