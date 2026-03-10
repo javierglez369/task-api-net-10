@@ -25,12 +25,12 @@ public class TaskItem
 
     /// <summary>Fecha y hora de última modificación (UTC).</summary>
     public DateTime? UpdatedAt { get; set; }
-}
+// }
 
-/// <summary>Niveles de prioridad de una tarea.</summary>
-public enum Priority
-{
-    Low = 0,
-    Medium = 1,
-    High = 2
-}
+// /// <summary>Niveles de prioridad de una tarea.</summary>
+// public enum Priority
+// {
+//     Low = 0,
+//     Medium = 1,
+//     High = 2
+// }
