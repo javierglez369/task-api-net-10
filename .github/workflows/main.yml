@@ -21,3 +21,6 @@ jobs:
 
       - name: Restore dependencies
         run: dotnet restore src/Api/Api.csproj
+
+      - name: Build
+        run: dotnet build src/Api/Api.csproj --configuration Release --no-restore
