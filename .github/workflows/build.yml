@@ -27,7 +27,7 @@ on:
           - detailed
 
 env: 
-  DOTNET_VERSION: '10.0.x'
+  DOTNET_VERSION: '10.0.103'
   BUILD_CONFIGURATION: 'Release'
 
 jobs:
